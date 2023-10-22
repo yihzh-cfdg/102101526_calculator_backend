@@ -1,4 +1,5 @@
-FROM hub.c.163.com/library/java:latest
+FROM java:17
+MAINTAINER YIHZH
 VOLUME /tmp
-ADD target/docker-0.0.1-SNAPSHOT.jar app.jar
+ADD target/springCalculator-1.0.0-RELEASE.jar  app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]

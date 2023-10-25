@@ -27,46 +27,49 @@ public class CalculatorServiceImpl implements CalculatorService {
         Double val = resultData.getVal(), exp = 0.0;
         BigDecimal ans = new BigDecimal(0);
         ans = ans.setScale(10, RoundingMode.HALF_UP);
-        if (op.equals("pi"))
+        if ("pi".equals(op)) {
             exp = Math.PI;
-        else if (op.equals("e"))
+        } else if ("e".equals(op)) {
             exp = Math.E;
-        else if (op.equals("x2"))
+        } else if ("x2".equals(op)) {
             exp = val * val;
-        else if (op.equals("sin"))
+        } else if ("sin".equals(op)) {
             exp = Math.sin(Math.toDegrees(val));
-        else if (op.equals("1/x"))
+        } else if ("1/x".equals(op)) {
             exp = 1 / val;
-        else if (op.equals("abs")) {
-            if (val > 0)
+        } else if ("abs".equals(op)) {
+            if (val > 0) {
                 exp = val;
-            else
+            } else {
                 exp = -val;
-        } else if (op.equals("exp"))
+            }
+        } else if ("exp".equals(op)) {
             exp = Math.exp(val);
-        else if (op.equals("sqrt"))
+        } else if ("sqrt".equals(op)) {
             exp = Math.sqrt(val);
-        else if (op.equals("cos"))
+        } else if ("cos".equals(op)) {
             exp = Math.cos(Math.toDegrees(val));
-        else if (op.equals("fact"))
-            if (val <= 20)
+        } else if ("fact".equals(op)) {
+            if (val <= 20) {
                 exp = fact[(int) Math.round(val)];
-            else
+            } else {
                 exp = Infinity;
-        else if (op.equals("10x"))
+            }
+        } else if ("10x".equals(op)) {
             exp = Math.pow(10.0, val);
-        else if (op.equals("tan"))
+        } else if ("tan".equals(op)) {
             exp = Math.tan(Math.toDegrees(val));
-        else if (op.equals("asin"))
+        } else if ("asin".equals(op)) {
             exp = Math.asin(Math.toDegrees(val));
-        else if (op.equals("log"))
+        } else if ("log".equals(op)) {
             exp = Math.log10(val);
-        else if (op.equals("acos"))
+        } else if ("acos".equals(op)) {
             exp = Math.acos(Math.toDegrees(val));
-        else if (op.equals("ln"))
+        } else if ("ln".equals(op)) {
             exp = Math.log(val);
-        else if (op.equals("atan"))
+        } else if ("atan".equals(op)) {
             exp = Math.atan(Math.toDegrees(val));
+        }
         ans = BigDecimal.valueOf(exp);
         return Double.valueOf(ans.toString());
     }

@@ -3,6 +3,10 @@ package com.yhz.se.emums;
 import com.yhz.se.bean.common.IResult;
 import lombok.Getter;
 
+/**
+ * @author Octopus
+ */
+
 @Getter
 public enum ResultEnum implements IResult {
     SUCCESS(2001, "接口调用成功"),
